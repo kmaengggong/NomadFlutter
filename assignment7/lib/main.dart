@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 const blackColor = Color(0xFF181818);
 
@@ -52,10 +52,10 @@ class MyApp extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "TODAY",
                       style: TextStyle(
                         color: Colors.white,
@@ -63,10 +63,10 @@ class MyApp extends StatelessWidget {
                         height: 0.8,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 5,
                     ),
-                    const Text(
+                    Text(
                       "·",
                       style: TextStyle(
                         color: Colors.pink,
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
                         height: 0.8,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 5,
                     ),
                     MyText("17", 1),
@@ -90,38 +90,38 @@ class MyApp extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                MyCard(
-                  backgroundColor: const Color(0xFFFEF754),
+                const MyCard(
+                  backgroundColor: Color(0xFFFEF754),
                   startMonth: "11",
                   startDay: "30",
                   endMonth: "12",
                   endDay: "20",
                   todo: "DESIGN MEETING",
-                  people: const ["ALEX", "HELENA", "NANA"],
+                  people: ["ALEX", "HELENA", "NANA"],
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                MyCard(
-                  backgroundColor: const Color(0xFF9C6BCE),
+                const MyCard(
+                  backgroundColor: Color(0xFF9C6BCE),
                   startMonth: "12",
                   startDay: "35",
                   endMonth: "14",
                   endDay: "10",
                   todo: "DAILY PROJECT",
-                  people: const ["ME", "RICHARD", "CIRY", "+4"],
+                  people: ["ME", "RICHARD", "CIRY", "+4"],
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                MyCard(
-                  backgroundColor: const Color(0xFFBCEE4B),
+                const MyCard(
+                  backgroundColor: Color(0xFFBCEE4B),
                   startMonth: "15",
                   startDay: "00",
                   endMonth: "16",
                   endDay: "30",
                   todo: "WEEKLY PLANNING",
-                  people: const ["DEN", "NANA", "MARK"],
+                  people: ["DEN", "NANA", "MARK"],
                 ),
               ],
             ),

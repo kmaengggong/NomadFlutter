@@ -1,7 +1,6 @@
 import 'package:assignment10_final/models/movie_detail_model.dart';
 import 'package:assignment10_final/services/api_service.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -20,12 +19,6 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   static const String baseUrl = "https://image.tmdb.org/t/p/w500";
   late Future<MovieDetailModel> movie;
-
-  // Future<void> _launchUrl(_url) async {
-  //   if (!await launchUrl(_url)) {
-  //     throw Exception('Could not launch $_url');
-  //   }
-  // }
 
   onPressedHomePage(String url) async {
     await launchUrlString(url);
@@ -197,7 +190,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     "Visit Homepage",
                                     style: TextStyle(
                                       color: Colors.black,
