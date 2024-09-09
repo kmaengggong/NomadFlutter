@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 // import 'dart:io';
 
-void main() => runApp(App());
+void main() => runApp(const App());
 
 class App extends StatelessWidget {
   const App({super.key});

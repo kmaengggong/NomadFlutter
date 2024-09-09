@@ -5,6 +5,8 @@ void main() => runApp(MyApp());
 const blackColor = Color(0xFF181818);
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage("https://picsum.photos/300/300"),
+                      backgroundImage:
+                          NetworkImage("https://picsum.photos/300/300"),
                       radius: 30,
                     ),
                     Icon(
@@ -38,7 +41,8 @@ class MyApp extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                Text("MONDAY 16",
+                Text(
+                  "MONDAY 16",
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.9),
                     fontSize: 18,
@@ -51,23 +55,25 @@ class MyApp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text("TODAY",
+                    const Text(
+                      "TODAY",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 48,
                         height: 0.8,
-                      ),   
+                      ),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Text("·",
+                    const Text(
+                      "·",
                       style: TextStyle(
                         color: Colors.pink,
                         fontSize: 48,
                         fontWeight: FontWeight.w900,
                         height: 0.8,
-                      ),   
+                      ),
                     ),
                     const SizedBox(
                       width: 5,
@@ -88,7 +94,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: const Color(0xFFFEF754),
                   startMonth: "11",
                   startDay: "30",
-                  endMonth:  "12",
+                  endMonth: "12",
                   endDay: "20",
                   todo: "DESIGN MEETING",
                   people: const ["ALEX", "HELENA", "NANA"],
@@ -100,7 +106,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: const Color(0xFF9C6BCE),
                   startMonth: "12",
                   startDay: "35",
-                  endMonth:  "14",
+                  endMonth: "14",
                   endDay: "10",
                   todo: "DAILY PROJECT",
                   people: const ["ME", "RICHARD", "CIRY", "+4"],
@@ -112,7 +118,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: const Color(0xFFBCEE4B),
                   startMonth: "15",
                   startDay: "00",
-                  endMonth:  "16",
+                  endMonth: "16",
                   endDay: "30",
                   todo: "WEEKLY PLANNING",
                   people: const ["DEN", "NANA", "MARK"],
@@ -122,28 +128,29 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-    ); 
+    );
   }
 }
 
 class MyText extends StatelessWidget {
   final String text;
   final int order;
-  
+
   final double _weight = 16;
-  
-  MyText(this.text, this.order);
-  
+
+  const MyText(this.text, this.order, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: Offset(((order-1) * _weight), 0),
-      child: Text(text,
+      offset: Offset(((order - 1) * _weight), 0),
+      child: Text(
+        text,
         style: TextStyle(
           color: Colors.white.withOpacity(0.6),
           fontSize: 48,
           height: 0.8,
-        ),    
+        ),
       ),
     );
   }
@@ -153,8 +160,9 @@ class MyCard extends StatelessWidget {
   final Color backgroundColor;
   final String startMonth, startDay, endMonth, endDay, todo;
   final List<String> people;
-  
-  MyCard({
+
+  const MyCard({
+    super.key,
     required this.backgroundColor,
     required this.startMonth,
     required this.startDay,
@@ -163,7 +171,7 @@ class MyCard extends StatelessWidget {
     required this.todo,
     required this.people,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -182,14 +190,16 @@ class MyCard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(startMonth,
+                Text(
+                  startMonth,
                   style: const TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
                     height: 1.2,
                   ),
                 ),
-                Text(startDay,
+                Text(
+                  startDay,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -207,14 +217,16 @@ class MyCard extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                Text(endMonth,
+                Text(
+                  endMonth,
                   style: const TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
                     height: 1.2,
                   ),
                 ),
-                Text(endDay,
+                Text(
+                  endDay,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -229,14 +241,16 @@ class MyCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(todo.split(" ")[0],
+                Text(
+                  todo.split(" ")[0],
                   style: const TextStyle(
                     fontSize: 60,
                     fontWeight: FontWeight.w500,
                     height: 0.8,
                   ),
                 ),
-                Text(todo.split(" ")[1],
+                Text(
+                  todo.split(" ")[1],
                   style: const TextStyle(
                     fontSize: 60,
                     fontWeight: FontWeight.w500,
@@ -250,18 +264,21 @@ class MyCard extends StatelessWidget {
                   offset: const Offset(0, 20),
                   child: Row(
                     children: people
-                      .map((person) => Padding(
-                        padding: const EdgeInsets.only(right: 24),
-                        child: Text(person,
-                          style: TextStyle(
-                            color: person == "ME"
-                              ? Colors.black
-                              : Colors.black.withOpacity(0.5),
-                            fontSize: 16,
+                        .map(
+                          (person) => Padding(
+                            padding: const EdgeInsets.only(right: 24),
+                            child: Text(
+                              person,
+                              style: TextStyle(
+                                color: person == "ME"
+                                    ? Colors.black
+                                    : Colors.black.withOpacity(0.5),
+                                fontSize: 16,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),)
-                      .toList(),
+                        )
+                        .toList(),
                   ),
                 ),
               ],

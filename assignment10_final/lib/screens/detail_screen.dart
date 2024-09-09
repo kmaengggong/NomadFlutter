@@ -48,17 +48,17 @@ class _DetailScreenState extends State<DetailScreen> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left,
             size: 40,
             color: Colors.white,
           ),
         ),
-        title: Align(
+        title: const Align(
           alignment: Alignment.centerLeft,
           child: Text(
             "Back to list",
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.w600,
@@ -86,7 +86,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 320,
                     ),
                     FutureBuilder(
@@ -97,19 +97,21 @@ class _DetailScreenState extends State<DetailScreen> {
 
                           final stars = List<Widget>.generate(
                             (data.voteAverage / 2).floor(), // 전체 별 개수
-                            (index) => Icon(Icons.star, color: Colors.yellow),
+                            (index) =>
+                                const Icon(Icons.star, color: Colors.yellow),
                           );
 
                           final halfStar = (data.voteAverage / 2) % 1 != 0
-                              ? Icon(Icons.star_half, color: Colors.yellow)
-                              : SizedBox();
+                              ? const Icon(Icons.star_half,
+                                  color: Colors.yellow)
+                              : const SizedBox();
 
                           final emptyStars = List<Widget>.generate(
                             5 -
                                 stars.length -
                                 (halfStar is Icon ? 1 : 0), // 빈 별 개수
-                            (index) =>
-                                Icon(Icons.star_border, color: Colors.yellow),
+                            (index) => const Icon(Icons.star_border,
+                                color: Colors.yellow),
                           );
 
                           final hours = data.runtime ~/ 60;
@@ -124,7 +126,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             children: [
                               Text(
                                 data.title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 32,
                                   fontWeight: FontWeight.w700,
@@ -136,32 +138,32 @@ class _DetailScreenState extends State<DetailScreen> {
                                   halfStar,
                                   ...emptyStars,
                                   data.adult
-                                      ? Icon(
+                                      ? const Icon(
                                           Icons.eighteen_up_rating,
                                           color: Colors.red,
                                           size: 32,
                                         )
-                                      : Icon(
+                                      : const Icon(
                                           Icons.no_adult_content,
                                           color: Colors.white,
                                           size: 32,
                                         ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Text(
                                 '$runtimeText | $genresText',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 40,
                               ),
-                              Text(
+                              const Text(
                                 "Storyline",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -169,18 +171,18 @@ class _DetailScreenState extends State<DetailScreen> {
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 data.overview,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 40,
                               ),
                               Align(
@@ -188,19 +190,19 @@ class _DetailScreenState extends State<DetailScreen> {
                                 child: ElevatedButton(
                                   onPressed: () =>
                                       onPressedHomePage(data.homepage),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.yellow,
+                                    minimumSize: const Size(320, 56),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
                                   child: Text(
                                     "Visit Homepage",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.yellow,
-                                    minimumSize: Size(320, 56),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                   ),
                                 ),

@@ -21,10 +21,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            Text(
+            const Text(
               "Popular Movies",
               style: TextStyle(
                 fontSize: 24,
@@ -52,10 +52,10 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Now in Cinemas",
               style: TextStyle(
                 fontSize: 24,
@@ -83,10 +83,10 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Comming soon",
               style: TextStyle(
                 fontSize: 24,
