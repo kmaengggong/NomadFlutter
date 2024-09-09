@@ -5,6 +5,8 @@ import 'dart:async';
 void main() => runApp(App());
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -125,9 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
       isPause = true;
       selectedIndex = order;
 
-      if (order == 1)
+      if (order == 1) {
         selectedSeconds = FIFTEEN_MINS;
-      else if (order == 2)
+      } else if (order == 2)
         selectedSeconds = TWENTY_MINS;
       else if (order == 3)
         selectedSeconds = TWENTY_FIVE_MINS;
